@@ -1,40 +1,32 @@
 import React, { Component } from 'react'
+import Feed from './components/feed'
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      status: false
+      feed: [
+        { id: 1, username: 'Matheus', curtidas: 10, comentarios: 2 },
+        { id: 2, username: 'Pedro', curtidas: 5, comentarios: 4 },
+        { id: 3, username: 'Lucas', curtidas: 20, comentarios: 15 },
+        {id:4, username: 'Ricardo', curtidas:0, comentarios:0 }
+      ]
     };
-    this.entrar = this.entrar.bind(this);
-    this.sair = this.sair.bind(this)
-  }
-
-  entrar() {
-    this.setState({ status: true })
-  }
-
-  sair() {
-    this.setState({ status: false })
   }
 
   render() {
     return (
       <div>
-        {this.state.status ?
-          <div>
-            <h1>Você conseguiu</h1>
-            <button onClick={this.sair}>Saia aqui</button>
-          </div> :
-          <div>
-            <h1>Você tentou</h1>
-            <button onClick={this.entrar}>Entre aqui</button>
-          </div>
-        }
-      </div>
 
-    )
+        {this.state.feed.map((item) => {
+          return (
+            <Feed id={item.id} username={item.username} curtidas={item.curtidas} comentarios ={item.comentarios}/>
+          )
+        })}
+
+      </div>
+    );
   }
 }
 
