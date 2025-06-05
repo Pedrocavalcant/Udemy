@@ -17,7 +17,7 @@ body{
 
 .container{
     display: flex;
-    gap: 10px;
+    gap: 15px;
 }
 
 button{
@@ -26,12 +26,14 @@ button{
     background-color: white;
     border: none;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 button:hover{
     color: white;
     background-color: black;
-    transition: all 0.4s;
+    transition: all 0.5s;
     scale: 1.1;
     font-weight: bold;
+    border: 2px solid white;
 }
